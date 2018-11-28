@@ -46,14 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Maze\Cell.cs" />
+    <Compile Include="Maze\Direction.cs" />
+    <Compile Include="Maze\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Maze\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="SkipList\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkipList\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maze\MazeNavigator.cs" />
+    <Compile Include="Maze\MazePainter.cs" />
+    <Compile Include="Maze\MyMaze.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maze\Position.cs" />
+    <Compile Include="SkipList\MyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SkipList\MyControl.Designer.cs">
+      <DependentUpon>MyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkipList\SkipListPainter.cs" />
+    <EmbeddedResource Include="Maze\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkipList\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +88,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SkipList\MyControl.resx">
+      <DependentUpon>MyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SkipList.Cui\SkipList.Cui.csproj">
+      <Project>{e0a20638-8843-4efa-bf87-54640434a0ab}</Project>
+      <Name>SkipList.Cui</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
